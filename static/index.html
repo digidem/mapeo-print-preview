@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>vector tile print preview</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='http://mapbox-gl-inspect.lukasmartinelli.ch/dist/mapbox-gl-inspect.min.js'></script>
+    <link href='http://mapbox-gl-inspect.lukasmartinelli.ch/dist/mapbox-gl-inspect.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZW5kLWNhcGl0YWxpc20iLCJhIjoiY2ptd2ljMjdqMDBkcTNycjJxZzR0N3ViYSJ9.JyBNBU82jr1DajUcwa-KlA';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'http://localhost:5050/style.json',
+    zoom: 13,
+    center: [ -77.55390093476967, -1.2878440246161906 ],
+});
+
+map.on('load', function () {
+  map.addControl(new MapboxInspect());
+});
+</script>
+
+</body>
+</html>

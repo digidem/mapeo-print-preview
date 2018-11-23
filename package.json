@@ -1,0 +1,22 @@
+{
+  "name": "mapeo-print-preview",
+  "description": "Some minimal command line programs for generating a print preview from an osm-p2p database.",
+  "author": "Stephen Whitmore <sww@eight.net>",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/noffle/mapeo-print-preview.git"
+  },
+  "homepage": "https://github.com/noffle/mapeo-print-preview",
+  "bugs": "https://github.com/noffle/mapeo-print-preview/issues",
+  "keywords": [],
+  "dependencies": {
+    "collect-stream": "^1.2.1",
+    "feature-filter-geojson-vt": "^3.0.0",
+    "geojson-vt": "^3.2.1",
+    "osm-p2p": "^2.0.0",
+    "osm-p2p-geojson": "^3.1.2",
+    "through2": "^3.0.0",
+    "vt-pbf": "^3.1.1"
+  },
+  "license": "ISC"
+}
