@@ -13,8 +13,8 @@ if (process.argv.length !== 3) {
   console.log('USAGE: node serve.js datadir')
   process.exit(1)
 }
-
 var datasetRoot = process.argv[2]
+
 var layerify = require('./' + path.join('.', datasetRoot, 'layerify.js'))
 var presets = JSON.parse(fs.readFileSync(path.join(datasetRoot, 'presets.json'), 'utf8'))
 var osm = Osm(path.join(datasetRoot, 'osm'))
