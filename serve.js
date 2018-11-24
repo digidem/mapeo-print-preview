@@ -9,7 +9,12 @@ var path = require('path')
 
 var osmExport = require('./lib/export')
 
-var datasetRoot = 'waorani'
+if (process.argv.length !== 3) {
+  console.log('USAGE: node serve.js datadir')
+  process.exit(1)
+}
+
+var datasetRoot = process.argv[2]
 var layerify = require('./' + path.join('.', datasetRoot, 'layerify.js'))
 var presets = JSON.parse(fs.readFileSync(path.join(datasetRoot, 'presets.json'), 'utf8'))
 var osm = Osm(path.join(datasetRoot, 'osm'))
@@ -19,13 +24,8 @@ function index (cb) {
   if (fs.existsSync(presetsPath)) {
     fs.readFile(presetsPath, 'utf8', parseGeoJson)
   } else {
-    console.log('exporting geojson..')
-    var g = osmExport(osm, presets)
-    collect(g, function (err, rawGeojson) {
-      console.log('dumping gejosn..')
-      fs.writeFileSync(presetsPath, rawGeojson, 'utf8')
-      parseGeoJson(err, rawGeojson)
-    })
+    console.log(presetsPath, 'not found. Run export.js to generate it.')
+    process.exit(1)
   }
 
   function parseGeoJson (err, rawGeojson) {
