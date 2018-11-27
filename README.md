@@ -10,7 +10,7 @@ This repo is a collection of three command line scripts that build the necessary
 
 The scripts all take a `dataset` parameter, which is a path to a directory.
 
-Here is a listing of the files that need to appear in that dataset directory (`waorani/` above) and where they currently come from:
+Here is a listing of the files that need to appear in that dataset directory and where they currently come from:
 
 - Pre-Made
   - `presets.json`: a list of presets, fields, categories, and defaults. This is
