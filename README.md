@@ -18,9 +18,8 @@ Here is a listing of the files that need to appear in that dataset directory and
     and concatenated into a single JSON file.
   - `icons/`: a directory of SVGs icons, referenced by the presets in
     `presets.json`.
-  - `layerify.js`: not generally needed; a hack for one of our datasets (wao).
-    We're cutting up the OSM data into layers dynamically as they are served,
-    but we plan to phase this out, since it adds a lot of complexity.
+  - `layerify.js`: not generally needed; a hack for one of our datasets (wao),
+    so we can cut up the OSM data into layers dynamically as they are served.
   - `osm/`: directory of osm-p2p data. Likely created by [Mapeo Desktop](https://github.com/digidem/mapeo-desktop).
   - `style.json`: a JSON file adhering to the [MapBox Style Specification](https://www.mapbox.com/mapbox-gl-js/style-spec/).
 - Generated
